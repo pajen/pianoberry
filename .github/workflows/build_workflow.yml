@@ -1,0 +1,26 @@
+name: Build Pianoberry Image
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Pianoberry Image
+      run: |
+        bash ./build --force-rebuild
+    
+    - name: Upload Image Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: pianoberry-image
+        path: deploy/pianoberry.img
+        retention-days: 30
