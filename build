@@ -31,8 +31,8 @@ done
 if [ $FORCE_REBUILD ] || [ -z "$(docker image ls | grep pianoberry-build)" ]; then
   echo "Building pianoberry-build image"
   #docker rmi $(docker images | grep 'pianoberry-build' | awk '{print $3}')
-  #docker build --no-cache -q -t pianoberry-build .
-  docker build --no-cache -q pianoberry-build .
+  docker build --no-cache -q -t pianoberry-build .
+  #docker build --no-cache -q pianoberry-build .   does not work
 fi
 
 mkdir -p deploy
