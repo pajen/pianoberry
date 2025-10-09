@@ -37,4 +37,4 @@ fi
 
 mkdir -p deploy
 
-docker run --privileged --rm -it -v ./deploy:/build pianoberry-build:latest
+docker run --privileged --rm  -v ./deploy:/build pianoberry-build:latest
