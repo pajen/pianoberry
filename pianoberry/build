@@ -128,7 +128,7 @@ df -h p1
 df -h p2
 
 # Set hostname
-echo -n " pianoberry" > p1/cmdline.txt
+echo -n " hostname=pianoberry" >> p1/cmdline.txt
 
 cd /build/src
 
